@@ -10,12 +10,7 @@ layout: none
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', 'Roboto', Arial, sans-serif;
-      background: linear-gradient(135deg, #e9f0fb 0%, #f7f9fa 100%);
-      color: #222;
-    }
+    body { margin: 0; font-family: 'Inter', 'Roboto', Arial, sans-serif; background: #f8fafc; color: #222; }
     .container {
       max-width: 860px;
       margin: 56px auto;
@@ -25,8 +20,14 @@ layout: none
       padding: 52px 44px;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
+    }
+    .header {
+      display: flex;
+      flex-direction: row;
       align-items: center;
-      position: relative;
+      width: 100%;
+      margin-bottom: 18px;
     }
     .avatar {
       width: 140px;
@@ -35,7 +36,15 @@ layout: none
       object-fit: cover;
       border: 4px solid #557ecb;
       box-shadow: 0 2px 16px rgba(85,126,203,0.15);
-      margin-bottom: 22px;
+      margin-right: 38px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+    .head-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
     }
     h1 {
       font-size: 2.8rem;
@@ -49,15 +58,17 @@ layout: none
       font-size: 1.3rem;
       color: #4F5C6A;
       font-weight: 500;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      margin-top: 0;
     }
     .bio {
       font-size: 1.12rem;
       margin-bottom: 30px;
       color: #2e3d49;
       line-height: 1.7;
-      text-align: center;
+      text-align: left;
       max-width: 650px;
+      margin-left: 0;
     }
     .buttons {
       display: flex;
@@ -78,94 +89,157 @@ layout: none
       text-decoration: none;
       box-shadow: 0 2px 10px rgba(85,126,203,0.08);
       transition: background 0.2s, box-shadow 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
     }
     .button:hover {
       background: #557ecb;
       color: #fff;
       box-shadow: 0 4px 18px rgba(85,126,203,0.16);
     }
-    .links {
-      margin-bottom: 30px;
+    .section-title {
+      color: #29487d;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      margin-top: 36px;
+      letter-spacing: 0.2px;
+      border-bottom: 1px solid #e7ecf1;
+      padding-bottom: 6px;
+    }
+    .skills-list {
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
-      font-size: 1.08rem;
-      justify-content: center;
+      gap: 10px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-    .links a {
+    .skills-list li {
+      background: #e7ecf1;
       color: #29487d;
-      text-decoration: none;
+      padding: 7px 16px;
+      border-radius: 13px;
+      font-size: 0.98rem;
       font-weight: 500;
-      padding: 2px 10px;
-      border-radius: 6px;
-      transition: background 0.2s;
+      margin-bottom: 8px;
     }
-    .links a:hover {
-      background: #e9f0fb;
-      text-decoration: underline;
+    .proj-list {
+      list-style: disc inside;
+      padding-left: 0;
+      margin-bottom: 0;
     }
-    .nav {
-      margin-top: 16px;
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-    }
-    .nav a {
-      background: #eee;
-      color: #29487d;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 10px 26px;
-      border-radius: 20px;
-      transition: background 0.2s;
-      box-shadow: 0 1px 6px rgba(60,72,88,0.07);
-    }
-    .nav a:hover {
-      background: #d0e2ff;
-      color: #29487d;
-    }
+    .proj-list li { margin-bottom: 16px; }
+    .exp-list { list-style: none; margin: 0; padding: 0; }
+    .exp-list li { margin-bottom: 18px; }
+    .role { font-weight: 600; color: #23395d; }
+    .company { color: #4F5C6A; font-size: 1rem; margin-left: 8px; }
+    .date { float: right; color: #6B778C; font-size: 0.95rem; }
+    .desc { color: #464f5d; font-size: 0.99rem; margin: 2px 0 0 0; }
     @media (max-width: 700px) {
       .container { padding: 20px 10px; }
+      .header { flex-direction: column; align-items: center; }
+      .avatar { margin-right: 0; width: 96px; height: 96px; margin-bottom: 16px; }
       h1 { font-size: 2.1rem; }
-      .avatar { width: 96px; height: 96px; }
-      .bio { font-size: 1rem; }
+      .bio { font-size: 1rem; text-align: center; }
       .buttons { gap: 12px; }
-      .nav a { padding: 8px 12px; font-size: 1rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="/assets/img/profilephoto.jpg" alt="Tamanna Kumavat" class="avatar">
-    <h1>Tamanna Kumavat</h1>
-    <h2>AI & Data Science MSc @ University of Zurich | Full-Stack Developer</h2>
-    <div class="bio">
-      Master’s student in AI and Data Science at the University of Zurich with 7 years of full-stack development experience. <br>
-      Focused on LLMs, NLP, and model evaluation. Passionate about robust, real-world AI applications that are contextually aware, reliable, and impactful.
+    <div class="header">
+      <img src="/assets/img/profilephoto.jpg" alt="Tamanna Kumavat" class="avatar">
+      <div class="head-details">
+        <h1>Tamanna Kumavat</h1>
+        <h2>AI & Data Science MSc @ University of Zurich | Full-Stack Developer</h2>
+        <div class="bio">
+          Masters Student in AI and Data Science complemented by 7 years of Industry Experience
+as a Full Stack Developer, now upskilling and exploring the cutting-edge frontiers of
+artificial intelligence and its applications in transforming the world.
+        </div>
+        <div class="buttons">
+          <a class="button" href="/assets/files/TamannaKumavat_Resume.pdf" download>Download CV</a>
+          <a class="button" href="mailto:tamanna_kumavat@outlook.com">Send Email</a>
+        </div>
+      </div>
     </div>
-    <div class="buttons">
-      <a class="button" href="/assets/files/TamannaKumavat_Resume.pdf" download>
-        <svg height="20" width="20" fill="white" style="margin-right:4px;vertical-align:middle" viewBox="0 0 20 20"><path d="M5 8a1 1 0 012 0v3h2V8a1 1 0 112 0v3h2V8a1 1 0 112 0v3.293l2.707-2.707a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L7 11.293V8z"></path></svg>
-        Download Resume
-      </a>
-      <a class="button" href="mailto:tamanna_kumavat@outlook.com">
-        <svg height="20" width="20" fill="white" style="margin-right:4px;vertical-align:middle" viewBox="0 0 20 20"><path d="M2.94 6.36a2 2 0 012.81-.46L10 9.21l4.25-3.31a2 2 0 012.81.46c.63.8.37 1.94-.46 2.57l-6 4.68a2 2 0 01-2.58 0l-6-4.68a2 2 0 01-.46-2.57z"></path></svg>
-        Contact
-      </a>
+
+    <div class="section-title">About Me</div>
+    <div>
+      <strong>Objective:</strong> <br>
+      I am a Master’s student in <b>AI & Data Science</b> at the University of Zurich with 7 years of <b>full-stack development</b> experience. My current focus is on <b>LLMs, NLP, and model evaluation</b> — creating AI systems that are contextually aware, reliable, and impactful.
     </div>
-    <div class="links">
-      <a href="https://github.com/tamannaKumavat" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/tamanna-kumavat/" target="_blank">LinkedIn</a>
-      <a href="/about/">About</a>
-      <a href="/projects/">Projects</a>
+    <div style="margin-top:18px;">
+      <strong>Education:</strong>
+      <ul>
+        <li><b>Master of Science, AI & Data Science</b> — University of Zurich <i>(Expected 2026)</i></li>
+        <li><b>Bachelor of Technology, Computer Science</b> — NIT Hamirpur, India <i>(2011–2015)</i></li>
+      </ul>
     </div>
-    <div class="nav">
-      <a href="/about/">About Me</a>
-      <a href="/projects/">Projects</a>
+    <div style="margin-top:18px;">
+      <strong>Skills:</strong>
+      <ul class="skills-list">
+        <li>Python, NumPy, pandas, scikit-learn, SciPy, PyTorch, spaCy</li>
+        <li>HuggingFace, Computer Vision (OpenCV)</li>
+        <li>NLP (NER, Text Classification), RAG, Deep Learning (CNNs, RNNs, Transformers)</li>
+        <li>Data Collection, Cleaning, Feature Engineering, EDA, Statistical Analysis, A/B Testing, Visualization, Data Pipelines</li>
+        <li>SQL (Oracle SQL, PLSQL), NoSQL (MongoDB)</li>
+        <li>HTML, JS, Angular, React, Flask, FastAPI, Spring Boot, REST APIs</li>
+        <li>Git, Docker, Jenkins, Maven, CI/CD</li>
+        <li>Jupyter, Google Colab, VS Code, PyCharm, IntelliJ, Eclipse</li>
+        <li>English (C1), German (B1 – in progress)</li>
+      </ul>
     </div>
+    <div style="margin-top:18px;">
+      <strong>Professional Skills:</strong> Team collaboration, Agile workflows, analytical thinking, and effective communication.
+    </div>
+
+    <div class="section-title">Projects</div>
+    <ul class="proj-list">
+      <li><b>LLMs for Temporal Dynamics in Sequential Data</b> — Master thesis using pretrained LLMs and transformers for structured sequential data modeling and forecasting. Collaboration with Cambridge University.</li>
+      <li><b>SwissText Analytics Shared Task 2025</b> — RAG-based NLP pipeline using HyDE, multi-query, and hybrid search for cleantech knowledge extraction — 20% improvement in retrieval accuracy.</li>
+      <li><b>Automated KYC Verification</b> — Datathon-winning project at Julius Baer: automated KYC verification pipeline from multi-source JSON data, 90% test accuracy in under 24 hours.</li>
+      <li><b>Quantum Generative Modeling</b> — Developed QSC-Diffusion, a quantum-native diffusion model for image generation, achieving competitive FID scores with fewer parameters.</li>
+      <li><b>Context-Aware Sarcasm Detection</b> — Fine-tuned FLAN-T5 for sarcasm detection using contextual embeddings and linguistic patterns, improving nuanced classification accuracy.</li>
+      <li><b>SpeakEasy ChatBot</b> — Conversational agent using knowledge graphs, embeddings, and multimodal techniques to simulate realistic dialogues from movie datasets.</li>
+      <li><b>Short-Term Apartment Rentals in Zurich</b> — ML regression model with active learning and gamification to recommend personalized apartment options, solving cold-start problems without labeled data.</li>
+    </ul>
+
+    <div class="section-title">Experience</div>
+    <ul class="exp-list">
+      <li>
+        <span class="role">Technology Analyst</span>
+        <span class="company">Infosys Ltd (UBS AG), Zurich, Switzerland</span>
+        <span class="date">Jun 2019 – Aug 2023</span>
+        <div class="desc">
+          Led development of SPASA Portfolio Analytics platform (architecture, implementation, integration, testing, deployment).<br>
+          Designed microservice-based Service Orchestrator for job automation and templated emails.<br>
+          Collaborated with stakeholders for feature enhancements.<br>
+          Improved performance via Lucene indexing and migrated jobs to Autosys.
+        </div>
+      </li>
+      <li>
+        <span class="role">Senior System Engineer</span>
+        <span class="company">Infosys Ltd (UBS AG), Pune, India</span>
+        <span class="date">Sep 2017 – May 2019</span>
+        <div class="desc">
+          Led migration of legacy Order & Trade Management system to modern web-based platform with real-time visualization.<br>
+          Developed backend modules, managed testing and deployments.<br>
+          Designed features and provided end-to-end support.
+        </div>
+      </li>
+      <li>
+        <span class="role">System Engineer</span>
+        <span class="company">Infosys Ltd (UBS AG), Pune, India</span>
+        <span class="date">Jun 2016 – Sep 2017</span>
+        <div class="desc">
+          Built a front-end support tool for PIM system (debugging, log analysis, data validation).<br>
+          Migrated Lead Offering Management app to AngularJS, enhancing performance and UX.
+        </div>
+      </li>
+    </ul>
   </div>
 </body>
 </html>
