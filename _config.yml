@@ -1,3 +1,37 @@
-theme: jekyll-theme-minimal
-title: Tamanna Kumavat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: "Your Name"
+description: "Tagline — e.g., Software Engineer • Open Source • Speaker"
+url: "https://YOURUSERNAME.github.io"
+baseurl: ""  # keep empty for a user/organization site
+
+# Pick ONE remote theme (examples below). Start with Minimal Mistakes:
+remote_theme: "mmistakes/minimal-mistakes"
+
+# Optional but recommended plugins that work on GitHub Pages:
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+# Navigation (Minimal Mistakes style)
+header_pages:
+  - about.md
+  - projects.md
+
+# Author card (Minimal Mistakes)
+author:
+  name: "Your Name"
+  avatar: "/assets/img/avatar.jpg"   # add this image later
+  bio: "Short bio — focus on outcome & impact."
+  location: "City, Country"
+  links:
+    - label: "GitHub"
+      url: "https://github.com/YOURUSERNAME"
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/YOUR-USERNAME"
+    - label: "Email"
+      url: "mailto:you@example.com"
+
+# UI options (Minimal Mistakes)
+theme_skin: "default"  # or "dark","mint","contrast"
+search: true
