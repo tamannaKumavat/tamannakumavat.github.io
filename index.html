@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tamanna Kumavat | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #f6d365 0%, #fd6e6a 100%);
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+      padding: 40px;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #fd6e6a;
+      box-shadow: 0 2px 16px rgba(253,110,106,0.2);
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .profile-img:hover {
+      transform: scale(1.08);
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      margin: 0 0 12px 0;
+      color: #fd6e6a;
+      letter-spacing: 2px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: #444;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .bio {
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+      color: #222;
+      line-height: 1.7;
+    }
+    .links {
+      margin-bottom: 20px;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0 12px 12px 0;
+      background: #fd6e6a;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 2px 10px rgba(253,110,106,0.1);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .links a:hover {
+      background: #f6d365;
+      box-shadow: 0 4px 18px rgba(246,211,101,0.18);
+      color: #fd6e6a;
+    }
+    .section {
+      margin-top: 32px;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      color: #fd6e6a;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+    ul.skills {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    ul.skills li {
+      background: #f6d365;
+      color: #fd6e6a;
+      border-radius: 15px;
+      padding: 8px 18px;
+      font-weight: 600;
+      margin: 0 10px 10px 0;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(246,211,101,0.12);
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 16px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .profile-img {
+        width: 100px;
+        height: 100px;
+      }
+      ul.skills li {
+        padding: 6px 12px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" align="center">
+    <img src="https://avatars.githubusercontent.com/u/your-github-id?v=4" alt="Profile" class="profile-img">
+    <h1>Tamanna Kumavat</h1>
+    <h2>Software Developer | Open Source Enthusiast | Lifelong Learner</h2>
+    <p class="bio">
+      Hi! I'm Tamanna, passionate about building elegant solutions and exploring new technologies.<br>
+      I love contributing to open source, sharing knowledge, and collaborating with creative minds.<br>
+      Let's connect!
+    </p>
+    <div class="links">
+      <a href="https://github.com/tamannaKumavat" target="_blank">GitHub</a>
+      <a href="mailto:your-email@example.com">Email</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+      <a href="https://twitter.com/your-twitter" target="_blank">Twitter</a>
+      <a href="#projects">Projects</a>
+    </div>
+    <div class="section" id="skills">
+      <div class="section-title">Skills</div>
+      <ul class="skills">
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Python</li>
+        <li>Node.js</li>
+        <li>Git & GitHub</li>
+        <li>HTML/CSS</li>
+        <li>Open Source</li>
+        <li>UI/UX</li>
+      </ul>
+    </div>
+    <div class="section" id="projects">
+      <div class="section-title">Featured Projects</div>
+      <ul style="list-style: none; padding: 0;">
+        <li>
+          <strong><a href="https://github.com/tamannaKumavat/project1" target="_blank">Project One</a></strong><br>
+          <span style="color:#444;">Short description of your project goes here.</span>
+        </li>
+        <li>
+          <strong><a href="https://github.com/tamannaKumavat/project2" target="_blank">Project Two</a></strong><br>
+          <span style="color:#444;">Another short description here.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
