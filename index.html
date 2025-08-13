@@ -8,74 +8,123 @@ layout: none
   <meta charset="UTF-8">
   <title>Tamanna Kumavat | AI & Data Science Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Theme Styles -->
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', 'Roboto', Arial, sans-serif;
-      background: linear-gradient(120deg, #dbeafe 0%, #f8fafc 100%);
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
       color: #222;
       min-height: 100vh;
+      box-sizing: border-box;
     }
     .topbar {
       width: 100%;
-      background: #29487d;
+      background: #23395d;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
-      padding: 18px 32px 18px 0;
-      box-sizing: border-box;
-      gap: 16px;
-      position: relative;
-      z-index: 2;
+      padding: 20px 40px 20px 40px;
+      box-shadow: 0 4px 24px rgba(60,72,88,0.10);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar-left {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .topbar-left a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.13rem;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #29487d;
+      padding: 7px 20px;
+      border-radius: 16px;
+      transition: background 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .topbar-left a:hover {
+      background: #3655a7;
+      text-decoration: underline;
+    }
+    .topbar-right {
+      display: flex;
+      gap: 18px;
+      align-items: center;
     }
     .topbar .button {
       background: #fff;
-      color: #29487d;
-      font-family: 'Inter', Arial, sans-serif;
+      color: #23395d;
+      font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 600;
       border: none;
       border-radius: 22px;
-      padding: 11px 26px;
-      font-size: 1rem;
-      margin-left: 8px;
+      padding: 12px 30px;
+      font-size: 1.07rem;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(60,72,88,0.08);
-      transition: background 0.2s, color 0.2s;
-      display: inline-block;
+      box-shadow: 0 2px 10px rgba(60,72,88,0.08);
+      transition: background 0.18s, color 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .topbar .button:hover {
       background: #e0e7ff;
-      color: #29487d;
+      color: #23395d;
+    }
+    .topbar .contact-number {
+      color: #fff;
+      font-size: 1.09rem;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #29487d;
+      border-radius: 16px;
+      padding: 7px 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-left: 12px;
+      margin-right: 0;
     }
     .container {
-      max-width: 900px;
+      max-width: 1020px;
       margin: 48px auto 0 auto;
-      background: rgba(255,255,255,0.92);
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(60,72,88,0.10);
-      padding: 54px 44px 40px 44px;
+      background: rgba(255,255,255,0.97);
+      border-radius: 22px;
+      box-shadow: 0 8px 48px rgba(60,72,88,0.12);
+      padding: 62px 54px 46px 54px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       position: relative;
-      min-height: 600px;
+      min-height: 650px;
     }
     .profile-main {
       display: flex;
-      gap: 38px;
+      gap: 54px;
       align-items: center;
       width: 100%;
-      margin-bottom: 26px;
+      margin-bottom: 34px;
     }
     .avatar {
-      width: 120px;
-      height: 120px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #29487d;
-      box-shadow: 0 4px 16px rgba(60,72,88,0.14);
+      border: 3.5px solid #29487d;
+      box-shadow: 0 4px 18px rgba(60,72,88,0.18);
+      background: #e0e7ff;
     }
     .profile-info {
       flex: 1;
@@ -85,114 +134,192 @@ layout: none
       align-items: flex-start;
     }
     .profile-info h1 {
-      font-size: 2.6rem;
-      font-family: 'Inter', Arial, sans-serif;
+      font-size: 2.8rem;
+      font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
-      margin: 0 0 7px 0;
+      margin: 0 0 8px 0;
       color: #29487d;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .profile-info h2 {
-      font-size: 1.23rem;
+      font-size: 1.19rem;
       color: #29487d;
       font-weight: 500;
-      margin: 0 0 14px 0;
-      letter-spacing: 0.3px;
-    }
-    .links {
-      display: flex;
-      gap: 18px;
-      margin-top: 8px;
-    }
-    .links a {
-      color: #29487d;
-      text-decoration: none;
-      font-weight: 500;
-      background: #e0e7ff;
-      padding: 6px 18px;
-      border-radius: 12px;
-      transition: background 0.2s;
-      font-size: 1rem;
-    }
-    .links a:hover {
-      background: #c7d2fe;
-      text-decoration: underline;
+      margin: 0 0 15px 0;
+      letter-spacing: 0.2px;
+      font-family: 'Roboto', Arial, sans-serif;
     }
     .intro {
-      margin: 18px 0 30px 0;
-      font-size: 1.13rem;
+      margin: 22px 0 36px 0;
+      font-size: 1.15rem;
       color: #1e293b;
       line-height: 1.7;
-      max-width: 720px;
+      max-width: 760px;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #eef2ff;
+      padding: 20px 30px;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(85,126,203,0.06);
+    }
+    .bio-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #2e3d49;
+      font-size: 1.09rem;
+      line-height: 1.8;
     }
     .section {
-      margin-top: 34px;
+      margin-top: 38px;
       width: 100%;
     }
     .section-title {
       color: #29487d;
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 14px;
-      letter-spacing: 0.2px;
-      border-bottom: 1.5px solid #e0e7ff;
-      padding-bottom: 6px;
+      margin-bottom: 13px;
+      letter-spacing: 0.3px;
+      border-bottom: 2px solid #e0e7ff;
+      padding-bottom: 7px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .skills-category {
+      margin-top: 18px;
+      margin-bottom: 3px;
+      font-size: 1.15rem;
+      color: #234175;
+      font-weight: 600;
+      letter-spacing: 0.7px;
     }
     .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      display: block;
+      list-style: disc inside;
+      margin: 0 0 8px 0;
+      padding-left: 26px;
+      color: #29487d;
+      font-size: 1.04rem;
+      font-weight: 500;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .skills-list li {
+      margin-bottom: 7px;
+    }
+    .proj-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .proj-list li {
+      background: #e0e7ff;
+      padding: 16px 20px 14px 20px;
+      border-radius: 13px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 12px rgba(60,72,88,0.06);
+      font-size: 1.08rem;
+      font-family: 'Roboto', Arial, sans-serif;
+      position: relative;
+    }
+    .proj-list .company, .proj-list .date {
+      font-size: 0.99rem;
+      color: #6B778C;
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 400;
+    }
+    .proj-list .date {
+      color: #A0AEC0;
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin-left: 12px;
+    }
+    .proj-list .project-title {
+      font-weight: bold;
+      color: #29487d;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-bottom: 7px;
+      display: block;
+    }
+    .exp-list {
       list-style: none;
       margin: 0;
       padding: 0;
     }
-    .skills-list li {
-      background: #e0e7ff;
-      color: #29487d;
-      padding: 7px 16px;
+    .exp-list li {
+      margin-bottom: 24px;
+      background: #f6f8ff;
+      padding: 16px 22px 14px 22px;
       border-radius: 13px;
-      font-size: 0.97rem;
-      font-weight: 500;
-      margin-bottom: 8px;
+      box-shadow: 0 2px 10px rgba(60,72,88,0.08);
+      font-size: 1.04rem;
+      position: relative;
+      font-family: 'Roboto', Arial, sans-serif;
     }
-    .proj-list {
-      list-style: disc inside;
-      padding-left: 0;
-      margin-bottom: 0;
+    .role {
+      font-weight: 700;
+      color: #29487d;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.08rem;
     }
-    .proj-list li { margin-bottom: 16px; }
-    .exp-list { list-style: none; margin: 0; padding: 0; }
-    .exp-list li { margin-bottom: 18px; }
-    .role { font-weight: 600; color: #29487d; }
-    .company { color: #4F5C6A; font-size: 1rem; margin-left: 8px; }
-    .date { float: right; color: #6B778C; font-size: 0.95rem; }
-    .desc { color: #575f6a; font-size: 0.99rem; margin: 2px 0 0 0; }
-    @media (max-width: 900px) {
-      .container { padding: 24px 3vw 18px 3vw; }
+    .company {
+      color: #6B778C;
+      font-weight: 400;
+      font-size: 1.01rem;
+      font-family: 'Roboto', Arial, sans-serif;
+      margin-left: 8px;
+    }
+    .date {
+      color: #A0AEC0;
+      font-weight: 400;
+      font-size: 0.95rem;
+      font-family: 'Roboto', Arial, sans-serif;
+      float: right;
+      margin-top: 2px;
+      margin-left: 14px;
+    }
+    .desc {
+      color: #575f6a;
+      font-size: 1.01rem;
+      margin: 10px 0 0 0;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    @media (max-width: 1100px) {
+      .container { padding: 28px 2vw 18px 2vw; }
       .profile-main { flex-direction: column; gap: 18px; align-items: flex-start; }
-      .avatar { width: 90px; height: 90px; }
-      .profile-info h1 { font-size: 1.7rem; }
-      .profile-info h2 { font-size: 1.05rem; }
+      .avatar { width: 130px; height: 130px; }
+      .profile-info h1 { font-size: 2rem; }
+      .profile-info h2 { font-size: 1rem; }
       .intro { font-size: 1rem; }
+      .section-title { font-size: 1.07rem; }
     }
     @media (max-width: 700px) {
-      .topbar { padding: 10px 8px 10px 0; }
-      .container { padding: 12px 2vw 10px 2vw; }
-      .avatar { width: 70px; height: 70px; }
-      .profile-info h1 { font-size: 1.25rem;}
-      .profile-info h2 { font-size: 0.97rem;}
-      .links a { font-size: 0.97rem; padding: 5px 10px; }
-      .section-title { font-size: 1rem; }
+      .topbar { padding: 10px 8px 10px 8px; flex-direction: column; align-items: flex-start;}
+      .topbar-left, .topbar-right { margin-bottom: 10px; }
+      .container { padding: 10px 1vw 8px 1vw; }
+      .avatar { width: 80px; height: 80px; }
+      .profile-info h1 { font-size: 1.16rem;}
+      .profile-info h2 { font-size: 0.91rem;}
+      .skills-category { font-size: 0.97rem;}
+      .proj-list li, .exp-list li { font-size: 0.97rem; padding: 10px 8px;}
+      .section-title { font-size: 0.98rem; }
+      .topbar .contact-number { font-size: 0.97rem; padding: 5px 8px;}
     }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <a class="button" href="/assets/files/TamannaKumavat_Resume.pdf" download>Download CV</a>
-    <a class="button" href="mailto:tamanna_kumavat@outlook.com">Send Email</a>
+    <div class="topbar-left">
+      <a href="https://github.com/tamannaKumavat" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/tamanna-kumavat/" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="topbar-right">
+      <a class="button" href="/assets/files/TamannaKumavat_Resume.pdf" download><i class="bi bi-download"></i> Resume</a>
+      <a class="button" href="mailto:tamanna_kumavat@outlook.com"><i class="bi bi-envelope"></i> Email</a>
+      <a class="button" href="tel:+41779986822" title="Call me!">
+        <i class="bi bi-telephone"></i> +41 77 998 68 22
+      </a>
+    </div>
   </div>
   <div class="container">
     <div class="profile-main">
@@ -200,43 +327,117 @@ layout: none
       <div class="profile-info">
         <h1>Tamanna Kumavat</h1>
         <h2>AI & Data Science MSc @ University of Zurich<br>Full-Stack Developer & AI Enthusiast</h2>
-        <div class="links">
-          <a href="https://github.com/tamannaKumavat" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/tamanna-kumavat/" target="_blank">LinkedIn</a>
-        </div>
       </div>
     </div>
     <div class="intro">
-      Welcome! I'm an AI & Data Science master's student at the University of Zurich and an experienced full-stack developer.<br>
-      My interests include LLMs, NLP, model evaluation, and building robust, real-world AI applications.<br>
-      Let's connect and collaborate on impactful technology!
+      <ul class="bio-list">
+        <li>Master’s student specializing in AI and Data Science, with 7 years’ experience in full-stack development and enterprise software.</li>
+        <li>Expert in Large Language Models (LLMs), Natural Language Processing (NLP), and robust model evaluation.</li>
+        <li>Skilled at building contextually aware, reliable, and impactful AI applications and data products.</li>
+        <li>Passionate about bridging theory with practical business value, collaborating with diverse teams, and continuous learning.</li>
+        <li>Currently collaborating with Cambridge University on advanced LLMs for temporal dynamics in sequential data.</li>
+      </ul>
     </div>
 
     <div class="section">
       <div class="section-title">Skills</div>
+      <div class="skills-category">AI & Machine Learning</div>
       <ul class="skills-list">
         <li>Python, NumPy, pandas, scikit-learn, SciPy, PyTorch, spaCy</li>
-        <li>HuggingFace, OpenCV, Deep Learning (CNNs, RNNs, Transformers)</li>
-        <li>LLMs, NLP (NER, Text Classification), RAG</li>
-        <li>Data Engineering, Feature Engineering, EDA, Visualization</li>
-        <li>SQL, MongoDB</li>
-        <li>HTML, JS, Angular, React, Flask, FastAPI, Spring Boot, REST APIs</li>
-        <li>Git, Docker, Jenkins, Maven, CI/CD</li>
-        <li>Jupyter, Colab, VS Code, PyCharm, IntelliJ, Eclipse</li>
-        <li>English (C1), German (B1 in progress)</li>
+        <li>HuggingFace Transformers, Deep Learning (CNNs, RNNs, Transformers)</li>
+        <li>LLMs, Retrieval-Augmented Generation (RAG), Computer Vision (OpenCV)</li>
+        <li>NLP (NER, Text Classification), Sequence Modeling</li>
+        <li>Model evaluation, adversarial training, transfer learning</li>
+      </ul>
+      <div class="skills-category">Data Science & Analytics</div>
+      <ul class="skills-list">
+        <li>Data collection, cleaning, feature engineering, EDA, statistical analysis</li>
+        <li>Data pipelines, workflow automation, A/B testing</li>
+        <li>Data visualization (matplotlib, seaborn)</li>
+      </ul>
+      <div class="skills-category">Full-stack & Software Engineering</div>
+      <ul class="skills-list">
+        <li>Front-End: HTML, JavaScript, Angular, React</li>
+        <li>Back-End: Python (Flask, FastAPI), Java (Spring Boot)</li>
+        <li>RESTful APIs, microservices, application architecture</li>
+        <li>Jupyter Notebook, Google Colab, VS Code, PyCharm, IntelliJ IDEA, Eclipse</li>
+      </ul>
+      <div class="skills-category">Databases & Big Data</div>
+      <ul class="skills-list">
+        <li>SQL (Oracle SQL, PLSQL)</li>
+        <li>NoSQL (MongoDB)</li>
+        <li>Advanced querying, data validation</li>
+      </ul>
+      <div class="skills-category">DevOps & Deployment</div>
+      <ul class="skills-list">
+        <li>Git, Docker, Jenkins, Maven, CI/CD pipelines</li>
+      </ul>
+      <div class="skills-category">Professional Skills & Languages</div>
+      <ul class="skills-list">
+        <li>Team collaboration, agile workflows, analytical thinking, communication</li>
+        <li>English (C1 – Advanced), German (B1 – In Progress)</li>
       </ul>
     </div>
 
     <div class="section">
       <div class="section-title">Projects</div>
       <ul class="proj-list">
-        <li><b>LLMs for Temporal Dynamics in Sequential Data</b>: Master thesis using pretrained LLMs and transformers for structured sequential data modeling and forecasting. Collaboration with Cambridge University.</li>
-        <li><b>SwissText Analytics Shared Task 2025</b>: RAG-based NLP pipeline using HyDE, multi-query, and hybrid search for cleantech knowledge extraction — 20% improvement in retrieval accuracy.</li>
-        <li><b>Automated KYC Verification</b>: Datathon-winning project at Julius Baer: automated KYC verification pipeline from multi-source JSON data, 90% test accuracy in under 24 hours.</li>
-        <li><b>Quantum Generative Modeling</b>: Developed QSC-Diffusion, a quantum-native diffusion model for image generation, achieving competitive FID scores with fewer parameters.</li>
-        <li><b>Context-Aware Sarcasm Detection</b>: Fine-tuned FLAN-T5 for sarcasm detection using contextual embeddings and linguistic patterns, improving nuanced classification accuracy.</li>
-        <li><b>SpeakEasy ChatBot</b>: Conversational agent using knowledge graphs, embeddings, and multimodal techniques to simulate realistic dialogues from movie datasets.</li>
-        <li><b>Short-Term Apartment Rentals in Zurich</b>: ML regression model with active learning and gamification to recommend personalized apartment options, solving cold-start problems without labeled data.</li>
+        <li>
+          <span class="project-title">LLMs for Temporal Dynamics in Sequential Data</span>
+          <span class="company">University of Zurich & Cambridge University</span>
+          <span class="date">2024 – ongoing</span>
+          <div>
+            Master thesis leveraging pretrained LLMs and transformers for modeling and forecasting structured sequential data. Collaboration with Cambridge University.
+          </div>
+        </li>
+        <li>
+          <span class="project-title">SwissText Analytics Shared Task 2025</span>
+          <span class="company">SwissText Conference</span>
+          <span class="date">2025</span>
+          <div>
+            RAG-based NLP pipeline using HyDE, multi-query, and hybrid search for cleantech knowledge extraction — achieved 20% improvement in retrieval accuracy.
+          </div>
+        </li>
+        <li>
+          <span class="project-title">Automated KYC Verification</span>
+          <span class="company">Julius Baer (Datathon)</span>
+          <span class="date">2024</span>
+          <div>
+            Datathon-winning project: automated KYC pipeline from multi-source JSON data, 90% test accuracy in under 24 hours.
+          </div>
+        </li>
+        <li>
+          <span class="project-title">Quantum Generative Modeling</span>
+          <span class="company">Personal Research</span>
+          <span class="date">2023</span>
+          <div>
+            Developed QSC-Diffusion, a quantum-native diffusion model for image generation, achieving competitive FID scores with fewer parameters.
+          </div>
+        </li>
+        <li>
+          <span class="project-title">Context-Aware Sarcasm Detection</span>
+          <span class="company">Personal Research</span>
+          <span class="date">2023</span>
+          <div>
+            Fine-tuned FLAN-T5 for sarcasm detection using contextual embeddings and linguistic patterns, improving nuanced classification accuracy.
+          </div>
+        </li>
+        <li>
+          <span class="project-title">SpeakEasy ChatBot</span>
+          <span class="company">Personal Project</span>
+          <span class="date">2022</span>
+          <div>
+            Conversational agent using knowledge graphs, embeddings, and multimodal techniques to simulate realistic dialogues from movie datasets.
+          </div>
+        </li>
+        <li>
+          <span class="project-title">Short-Term Apartment Rentals in Zurich</span>
+          <span class="company">Personal Project</span>
+          <span class="date">2021</span>
+          <div>
+            ML regression model with active learning and gamification to recommend personalized apartment options, solving cold-start problems without labeled data.
+          </div>
+        </li>
       </ul>
     </div>
 
