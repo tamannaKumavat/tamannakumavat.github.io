@@ -203,27 +203,59 @@
       padding-bottom: 7px;
       font-family: 'Montserrat', Arial, sans-serif;
     }
-    .skills-category {
-      margin-top: 17px;
-      margin-bottom: 2px;
-      font-size: 1.09rem;
-      color: #234175;
-      font-weight: 600;
-      letter-spacing: 0.7px;
+    .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 22px 28px;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .skill-block {
+    background: #e0e7ff;
+    border-radius: 13px;
+    box-shadow: 0 2px 10px rgba(60,72,88,0.06);
+    padding: 18px 20px 15px 20px;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #29487d;
+    font-size: 1.04rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .skill-block .skills-category {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: #23395d;
+    margin-bottom: 6px;
+    letter-spacing: 0.8px;
+  }
+  .skill-block .skills-list {
+    font-size: 1.01rem;
+    color: #29487d;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.7;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 500;
+  }
+  @media (max-width: 700px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 13px 0;
     }
-    .skills-list {
-      display: block;
-      list-style: disc inside;
-      margin: 0 0 8px 0;
-      padding-left: 26px;
-      color: #29487d;
+    .skill-block {
+      padding: 13px 10px 11px 10px;
+      font-size: 0.97rem;
+    }
+    .skill-block .skills-category {
       font-size: 1.01rem;
-      font-weight: 500;
-      font-family: 'Roboto', Arial, sans-serif;
     }
-    .skills-list li {
-      margin-bottom: 7px;
+    .skill-block .skills-list {
+      font-size: 0.95rem;
     }
+  }
     .proj-list {
       list-style: none;
       padding-left: 0;
@@ -396,42 +428,61 @@
 
     <div class="section">
       <div class="section-title">Skills</div>
-      <div class="skills-category">AI & Machine Learning</div>
-      <ul class="skills-list">
-        <li>Python, NumPy, pandas, scikit-learn, SciPy, PyTorch, spaCy</li>
-        <li>HuggingFace Transformers, Deep Learning (CNNs, RNNs, Transformers)</li>
-        <li>LLMs, Retrieval-Augmented Generation (RAG), Computer Vision (OpenCV)</li>
-        <li>NLP (NER, Text Classification), Sequence Modeling</li>
-        <li>Model evaluation, adversarial training, transfer learning</li>
-      </ul>
-      <div class="skills-category">Data Science & Analytics</div>
-      <ul class="skills-list">
-        <li>Data collection, cleaning, feature engineering, EDA, statistical analysis</li>
-        <li>Data pipelines, workflow automation, A/B testing</li>
-        <li>Data visualization (matplotlib, seaborn)</li>
-      </ul>
-      <div class="skills-category">Full-stack & Software Engineering</div>
-      <ul class="skills-list">
-        <li>Front-End: HTML, JavaScript, Angular, React</li>
-        <li>Back-End: Python (Flask, FastAPI), Java (Spring Boot)</li>
-        <li>RESTful APIs, microservices, application architecture</li>
-        <li>Jupyter Notebook, Google Colab, VS Code, PyCharm, IntelliJ IDEA, Eclipse</li>
-      </ul>
-      <div class="skills-category">Databases & Big Data</div>
-      <ul class="skills-list">
-        <li>SQL (Oracle SQL, PLSQL)</li>
-        <li>NoSQL (MongoDB)</li>
-        <li>Advanced querying, data validation</li>
-      </ul>
-      <div class="skills-category">DevOps & Deployment</div>
-      <ul class="skills-list">
-        <li>Git, Docker, Jenkins, Maven, CI/CD pipelines</li>
-      </ul>
-      <div class="skills-category">Professional Skills & Languages</div>
-      <ul class="skills-list">
-        <li>Team collaboration, agile workflows, analytical thinking, communication</li>
-        <li>English (C1 – Advanced), German (B1 – In Progress)</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <div class="skills-category">AI & Machine Learning</div>
+          <div class="skills-list">
+            Python, NumPy, pandas, scikit-learn, SciPy, PyTorch, spaCy<br>
+            HuggingFace Transformers, Deep Learning (CNNs, RNNs, Transformers)<br>
+            LLMs, Retrieval-Augmented Generation (RAG), Computer Vision (OpenCV)<br>
+            NLP (NER, Text Classification), Sequence Modeling<br>
+            Model evaluation, adversarial training, transfer learning<br>
+            <b>Knowledge graphs</b> (construction, querying, integration)
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skills-category">Data Science & Analytics</div>
+          <div class="skills-list">
+            Data collection, cleaning, feature engineering, EDA, statistical analysis<br>
+            Data pipelines, workflow automation, A/B testing<br>
+            Data visualization (matplotlib, seaborn)
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skills-category">Full-stack & Software Engineering</div>
+          <div class="skills-list">
+            Front-End: HTML, JavaScript, Angular, React<br>
+            Back-End: Python (Flask, FastAPI), Java (Spring Boot)<br>
+            RESTful APIs, microservices, application architecture<br>
+            Jupyter Notebook, Google Colab, VS Code, PyCharm, IntelliJ IDEA, Eclipse
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skills-category">Databases & Big Data</div>
+          <div class="skills-list">
+            SQL (Oracle SQL, PLSQL); NoSQL (MongoDB)<br>
+            Advanced querying, data validation
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skills-category">DevOps & Deployment</div>
+          <div class="skills-list">
+            Git, Docker, Jenkins, Maven, CI/CD pipelines
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skills-category">Professional Skills</div>
+          <div class="skills-list">
+            Team collaboration, agile workflows, analytical thinking, communication
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skills-category">Languages</div>
+          <div class="skills-list">
+            English (C1 – Advanced); German (B1 – In Progress)
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section">
