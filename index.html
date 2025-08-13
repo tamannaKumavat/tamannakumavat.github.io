@@ -11,7 +11,6 @@ layout: none
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <!-- Theme Styles -->
   <style>
     body {
       margin: 0;
@@ -25,24 +24,26 @@ layout: none
       width: 100%;
       background: #23395d;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px 20px 40px;
+      padding: 20px 5vw 20px 5vw;
       box-shadow: 0 4px 24px rgba(60,72,88,0.10);
       position: sticky;
       top: 0;
       z-index: 10;
     }
-    .topbar-left {
+    .topbar-left, .topbar-right {
       display: flex;
       gap: 18px;
       align-items: center;
+      flex-wrap: wrap;
     }
     .topbar-left a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1.13rem;
+      font-size: 1.09rem;
       font-family: 'Roboto', Arial, sans-serif;
       background: #29487d;
       padding: 7px 20px;
@@ -55,11 +56,6 @@ layout: none
     .topbar-left a:hover {
       background: #3655a7;
       text-decoration: underline;
-    }
-    .topbar-right {
-      display: flex;
-      gap: 18px;
-      align-items: center;
     }
     .topbar .button {
       background: #fff;
@@ -77,6 +73,7 @@ layout: none
       display: flex;
       align-items: center;
       gap: 8px;
+      min-width: 0;
     }
     .topbar .button:hover {
       background: #e0e7ff;
@@ -94,47 +91,60 @@ layout: none
       gap: 6px;
       font-weight: 500;
       letter-spacing: 0.5px;
-      margin-left: 12px;
-      margin-right: 0;
+      margin-left: 8px;
+      word-break: break-all;
+      min-width: 0;
+    }
+    .topbar .contact-number a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+    .topbar .contact-number a:hover {
+      text-decoration: underline;
+      color: #e0e7ff;
     }
     .container {
-      max-width: 1020px;
-      margin: 48px auto 0 auto;
+      max-width: 960px;
+      margin: 44px auto 0 auto;
       background: rgba(255,255,255,0.97);
       border-radius: 22px;
       box-shadow: 0 8px 48px rgba(60,72,88,0.12);
-      padding: 62px 54px 46px 54px;
+      padding: 54px 5vw 40px 5vw;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       position: relative;
       min-height: 650px;
+      box-sizing: border-box;
     }
     .profile-main {
       display: flex;
-      gap: 54px;
+      gap: 4vw;
       align-items: center;
       width: 100%;
-      margin-bottom: 34px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
     }
     .avatar {
-      width: 170px;
-      height: 170px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
       object-fit: cover;
       border: 3.5px solid #29487d;
       box-shadow: 0 4px 18px rgba(60,72,88,0.18);
       background: #e0e7ff;
+      flex-shrink: 0;
     }
     .profile-info {
       flex: 1;
-      min-width: 0;
+      min-width: 220px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
     .profile-info h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
       margin: 0 0 8px 0;
@@ -145,50 +155,62 @@ layout: none
       text-overflow: ellipsis;
     }
     .profile-info h2 {
-      font-size: 1.19rem;
+      font-size: 1.14rem;
       color: #29487d;
       font-weight: 500;
       margin: 0 0 15px 0;
       letter-spacing: 0.2px;
       font-family: 'Roboto', Arial, sans-serif;
     }
+    .about-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #29487d;
+      font-size: 1.22rem;
+      font-weight: 700;
+      margin-bottom: 9px;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
     .intro {
-      margin: 22px 0 36px 0;
-      font-size: 1.15rem;
+      margin: 20px 0 34px 0;
+      font-size: 1.13rem;
       color: #1e293b;
       line-height: 1.7;
-      max-width: 760px;
+      max-width: 740px;
       font-family: 'Roboto', Arial, sans-serif;
       background: #eef2ff;
-      padding: 20px 30px;
+      padding: 18px 22px;
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(85,126,203,0.06);
+      align-self: center;
+      width: 100%;
+      box-sizing: border-box;
     }
     .bio-list {
       margin: 0;
       padding-left: 18px;
       color: #2e3d49;
-      font-size: 1.09rem;
+      font-size: 1.07rem;
       line-height: 1.8;
     }
     .section {
-      margin-top: 38px;
+      margin-top: 34px;
       width: 100%;
     }
     .section-title {
       color: #29487d;
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       font-weight: 700;
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       letter-spacing: 0.3px;
       border-bottom: 2px solid #e0e7ff;
       padding-bottom: 7px;
       font-family: 'Montserrat', Arial, sans-serif;
     }
     .skills-category {
-      margin-top: 18px;
-      margin-bottom: 3px;
-      font-size: 1.15rem;
+      margin-top: 17px;
+      margin-bottom: 2px;
+      font-size: 1.09rem;
       color: #234175;
       font-weight: 600;
       letter-spacing: 0.7px;
@@ -199,7 +221,7 @@ layout: none
       margin: 0 0 8px 0;
       padding-left: 26px;
       color: #29487d;
-      font-size: 1.04rem;
+      font-size: 1.01rem;
       font-weight: 500;
       font-family: 'Roboto', Arial, sans-serif;
     }
@@ -213,32 +235,35 @@ layout: none
     }
     .proj-list li {
       background: #e0e7ff;
-      padding: 16px 20px 14px 20px;
+      padding: 14px 16px 12px 16px;
       border-radius: 13px;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
       box-shadow: 0 2px 12px rgba(60,72,88,0.06);
-      font-size: 1.08rem;
+      font-size: 1.04rem;
       font-family: 'Roboto', Arial, sans-serif;
       position: relative;
+      word-break: break-word;
     }
     .proj-list .company, .proj-list .date {
-      font-size: 0.99rem;
+      font-size: 0.97rem;
       color: #6B778C;
       font-family: 'Roboto', Arial, sans-serif;
       font-weight: 400;
+      display: inline-block;
+      margin-right: 8px;
     }
     .proj-list .date {
       color: #A0AEC0;
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       font-weight: 400;
-      margin-left: 12px;
+      margin-left: 8px;
     }
     .proj-list .project-title {
       font-weight: bold;
       color: #29487d;
-      font-size: 1.1rem;
+      font-size: 1.07rem;
       font-family: 'Montserrat', Arial, sans-serif;
-      margin-bottom: 7px;
+      margin-bottom: 5px;
       display: block;
     }
     .exp-list {
@@ -247,36 +272,41 @@ layout: none
       padding: 0;
     }
     .exp-list li {
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       background: #f6f8ff;
-      padding: 16px 22px 14px 22px;
+      padding: 14px 16px 12px 16px;
       border-radius: 13px;
       box-shadow: 0 2px 10px rgba(60,72,88,0.08);
-      font-size: 1.04rem;
+      font-size: 1.01rem;
       position: relative;
       font-family: 'Roboto', Arial, sans-serif;
+      word-break: break-word;
     }
     .role {
       font-weight: 700;
       color: #29487d;
       font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
+      margin-bottom: 2px;
+      display: inline-block;
     }
     .company {
       color: #6B778C;
       font-weight: 400;
-      font-size: 1.01rem;
+      font-size: 0.99rem;
       font-family: 'Roboto', Arial, sans-serif;
       margin-left: 8px;
+      display: inline-block;
     }
     .date {
       color: #A0AEC0;
       font-weight: 400;
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       font-family: 'Roboto', Arial, sans-serif;
       float: right;
       margin-top: 2px;
       margin-left: 14px;
+      display: inline-block;
     }
     .desc {
       color: #575f6a;
@@ -284,26 +314,54 @@ layout: none
       margin: 10px 0 0 0;
       font-family: 'Roboto', Arial, sans-serif;
     }
-    @media (max-width: 1100px) {
-      .container { padding: 28px 2vw 18px 2vw; }
-      .profile-main { flex-direction: column; gap: 18px; align-items: flex-start; }
-      .avatar { width: 130px; height: 130px; }
-      .profile-info h1 { font-size: 2rem; }
+    .exp-details-list {
+      margin: 8px 0 0 0;
+      padding-left: 22px;
+      font-size: 0.99rem;
+      color: #23395d;
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.7;
+    }
+    @media (max-width: 1024px) {
+      .container { padding: 16px 2vw 16px 2vw; }
+      .profile-main { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .avatar { width: 110px; height: 110px; }
+      .profile-info h1 { font-size: 1.6rem; }
       .profile-info h2 { font-size: 1rem; }
       .intro { font-size: 1rem; }
-      .section-title { font-size: 1.07rem; }
+      .about-title { font-size: 1.07rem; }
+      .section-title { font-size: 1.01rem; }
+      .skills-category { font-size: 1.01rem;}
     }
     @media (max-width: 700px) {
-      .topbar { padding: 10px 8px 10px 8px; flex-direction: column; align-items: flex-start;}
-      .topbar-left, .topbar-right { margin-bottom: 10px; }
-      .container { padding: 10px 1vw 8px 1vw; }
-      .avatar { width: 80px; height: 80px; }
-      .profile-info h1 { font-size: 1.16rem;}
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 10px 8px 10px 8px;
+      }
+      .topbar-left, .topbar-right {
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .topbar .button,
+      .topbar .contact-number {
+        font-size: 0.97rem;
+        padding: 5px 8px;
+        word-break: break-all;
+      }
+      .container {
+        padding: 10px 1vw 8px 1vw;
+        min-width: 0;
+      }
+      .avatar { width: 70px; height: 70px; }
+      .profile-info h1 { font-size: 1.05rem;}
       .profile-info h2 { font-size: 0.91rem;}
-      .skills-category { font-size: 0.97rem;}
+      .about-title { font-size: 0.98rem; }
       .proj-list li, .exp-list li { font-size: 0.97rem; padding: 10px 8px;}
       .section-title { font-size: 0.98rem; }
-      .topbar .contact-number { font-size: 0.97rem; padding: 5px 8px;}
+      .skills-category { font-size: 0.97rem;}
     }
   </style>
 </head>
@@ -315,10 +373,10 @@ layout: none
     </div>
     <div class="topbar-right">
       <a class="button" href="/assets/files/TamannaKumavat_Resume.pdf" download><i class="bi bi-download"></i> Resume</a>
-      <a class="button" href="mailto:tamanna_kumavat@outlook.com"><i class="bi bi-envelope"></i> Email</a>
-      <a class="button" href="tel:+41779986822" title="Call me!">
-        <i class="bi bi-telephone"></i> +41 77 998 68 22
-      </a>
+      <a class="button" href="mailto:tamanna_kumavat@outlook.com"><i class="bi bi-envelope"></i> Contact</a>
+      <span class="contact-number" title="Call me!"><i class="bi bi-telephone"></i>
+        <a href="tel:+41779986822">+41 77 998 68 22</a>
+      </span>
     </div>
   </div>
   <div class="container">
@@ -329,6 +387,7 @@ layout: none
         <h2>AI & Data Science MSc @ University of Zurich<br>Full-Stack Developer & AI Enthusiast</h2>
       </div>
     </div>
+    <div class="about-title">About Me</div>
     <div class="intro">
       <ul class="bio-list">
         <li>Master’s student specializing in AI and Data Science, with 7 years’ experience in full-stack development and enterprise software.</li>
@@ -383,11 +442,13 @@ layout: none
       <div class="section-title">Projects</div>
       <ul class="proj-list">
         <li>
-          <span class="project-title">LLMs for Temporal Dynamics in Sequential Data</span>
+          <span class="project-title">LLMs for Temporal Dynamics in Sequential Data (Master Thesis, ongoing)</span>
           <span class="company">University of Zurich & Cambridge University</span>
           <span class="date">2024 – ongoing</span>
           <div>
-            Master thesis leveraging pretrained LLMs and transformers for modeling and forecasting structured sequential data. Collaboration with Cambridge University.
+            Exploring the use of pretrained large language models (LLMs) and transformer architectures to model and forecast structured sequential data (e.g., multivariate time series, event streams, code traces). 
+            Focus on cross-domain generalization, transfer learning, and performance benchmarking against classical and deep learning baselines. 
+            Supervised by Dr. Kyriakos Flouris (Cambridge University collaboration).
           </div>
         </li>
         <li>
@@ -395,23 +456,29 @@ layout: none
           <span class="company">SwissText Conference</span>
           <span class="date">2025</span>
           <div>
-            RAG-based NLP pipeline using HyDE, multi-query, and hybrid search for cleantech knowledge extraction — achieved 20% improvement in retrieval accuracy.
+            Developed an NLP pipeline using Retrieval-Augmented Generation (RAG) with HyDE, multi-query, and hybrid search strategies for cleantech-related knowledge extraction. 
+            Achieved a 20% improvement in retrieval accuracy over existing methods. 
+            Integrated advanced semantic search and document ranking, enabling precise answer extraction from unstructured sources.
           </div>
         </li>
         <li>
-          <span class="project-title">Automated KYC Verification</span>
+          <span class="project-title">Automated KYC Verification (Datathon – Julius Baer, 2025)</span>
           <span class="company">Julius Baer (Datathon)</span>
           <span class="date">2024</span>
           <div>
-            Datathon-winning project: automated KYC pipeline from multi-source JSON data, 90% test accuracy in under 24 hours.
+            Built an end-to-end pipeline to automate KYC verification from multi-source JSON data. 
+            Engineered features from structured text and documents (e.g., passports, KYC forms), reaching 90% test accuracy under 24-hour constraints. 
+            Included document parsing, entity extraction, and rule-based validation modules.
           </div>
         </li>
         <li>
-          <span class="project-title">Quantum Generative Modeling</span>
+          <span class="project-title">Quantum Generative Modeling (Master Project)</span>
           <span class="company">Personal Research</span>
           <span class="date">2023</span>
           <div>
-            Developed QSC-Diffusion, a quantum-native diffusion model for image generation, achieving competitive FID scores with fewer parameters.
+            Developed QSC-Diffusion, a fully quantum-native diffusion framework for image generation using quantum scrambling and measurement-induced collapse. 
+            Achieved competitive FID scores with significantly fewer parameters, demonstrating the potential of quantum-native generative models. 
+            Benchmarked against classical diffusion and GAN architectures.
           </div>
         </li>
         <li>
@@ -419,7 +486,19 @@ layout: none
           <span class="company">Personal Research</span>
           <span class="date">2023</span>
           <div>
-            Fine-tuned FLAN-T5 for sarcasm detection using contextual embeddings and linguistic patterns, improving nuanced classification accuracy.
+            Fine-tuned FLAN-T5 on a sarcasm-labeled tweets dataset, leveraging linguistic patterns and contextual embeddings. 
+            Improved nuanced sarcasm detection accuracy through sequence-to-sequence training and optimized loss functions. 
+            Integrated attention weights analysis and adversarial data augmentation.
+          </div>
+        </li>
+        <li>
+          <span class="project-title">ML, NLP, Deep Learning & LLM Course Projects</span>
+          <span class="company">University of Zurich</span>
+          <span class="date">2022-2024</span>
+          <div>
+            Worked on CNNs, RNNs/LSTMs, transformers, transfer learning, adversarial training, and zero-shot learning. 
+            Applied to tasks like image classification, time series forecasting, and text generation using PyTorch. 
+            Explored multimodal fusion and retrieval-augmented generation for real-world problems.
           </div>
         </li>
         <li>
@@ -427,32 +506,42 @@ layout: none
           <span class="company">Personal Project</span>
           <span class="date">2022</span>
           <div>
-            Conversational agent using knowledge graphs, embeddings, and multimodal techniques to simulate realistic dialogues from movie datasets.
+            Designed a conversational agent capable of short dialogues using movie datasets. 
+            Combined knowledge graphs, contextual embeddings, and multimodal techniques to simulate realistic conversations. 
+            Supported intent detection and personality modeling.
           </div>
         </li>
         <li>
-          <span class="project-title">Short-Term Apartment Rentals in Zurich</span>
+          <span class="project-title">Short-Term Apartment Rentals in Zurich App</span>
           <span class="company">Personal Project</span>
           <span class="date">2021</span>
           <div>
-            ML regression model with active learning and gamification to recommend personalized apartment options, solving cold-start problems without labeled data.
+            Created a personalized apartment search tool using a regression-based ML model. 
+            Integrated active learning and gamification to tackle cold-start problems without labeled data. 
+            Delivered user-centric recommendations and visual analytics.
           </div>
         </li>
       </ul>
     </div>
 
     <div class="section">
-      <div class="section-title">Experience</div>
+      <div class="section-title">Work Experience</div>
       <ul class="exp-list">
         <li>
           <span class="role">Technology Analyst</span>
           <span class="company">Infosys Ltd (UBS AG), Zurich, Switzerland</span>
           <span class="date">Jun 2019 – Aug 2023</span>
           <div class="desc">
-            Led development of SPASA Portfolio Analytics platform (architecture, implementation, integration, testing, deployment).<br>
-            Designed microservice-based Service Orchestrator for job automation and templated emails.<br>
-            Collaborated with stakeholders for feature enhancements.<br>
-            Improved performance via Lucene indexing and migrated jobs to Autosys.
+            Led as the principal developer for SPASA Portfolio Analytics (Model-based After Sales Advisory and Active Advisory Solution), building the platform from the ground up. My work covered everything from architecture design and core feature development to integration, unit testing, optimization, and deployment.<br>
+            Developed the Service Orchestrator microservice to automate job execution and email notifications (using Freemarker templates).<br>
+            Collaborated directly with business stakeholders to implement strategic enhancements and new features for SPASA (Strategic Product And Sales Application).<br>
+            Key technical achievements included Lucene Indexing for significant performance improvements and migration of jobs from Oracle JCS to Autosys for robust scheduling.<br>
+            <ul class="exp-details-list">
+              <li>Built and optimized core analytics for model-based after-sales advisory solutions.</li>
+              <li>Championed full development lifecycle from requirements to deployment.</li>
+              <li>Enabled scalable automation and reporting via microservices.</li>
+              <li>Boosted system performance through advanced indexing and job scheduling.</li>
+            </ul>
           </div>
         </li>
         <li>
@@ -460,9 +549,14 @@ layout: none
           <span class="company">Infosys Ltd (UBS AG), Pune, India</span>
           <span class="date">Sep 2017 – May 2019</span>
           <div class="desc">
-            Led migration of legacy Order & Trade Management system to modern web-based platform with real-time visualization.<br>
-            Developed backend modules, managed testing and deployments.<br>
-            Designed features and provided end-to-end support.
+            Successfully led the migration of the legacy Order and Trade Management client (Osmosys—a rule-based, FIX protocol order routing system) to a modern web client, delivering a real-time consolidated view for Wealth Management locations.<br>
+            Oversaw all phases—feature development, integration, testing, optimization, and deployment.<br>
+            Partnered with stakeholders for ongoing support and enhancements.<br>
+            <ul class="exp-details-list">
+              <li>Modernized a critical trading system for improved user experience and real-time data.</li>
+              <li>Delivered core modules and ensured robust system reliability.</li>
+              <li>Acted as business-technology bridge for continuous improvement.</li>
+            </ul>
           </div>
         </li>
         <li>
@@ -470,8 +564,13 @@ layout: none
           <span class="company">Infosys Ltd (UBS AG), Pune, India</span>
           <span class="date">Jun 2016 – Sep 2017</span>
           <div class="desc">
-            Built a front-end support tool for PIM system (debugging, log analysis, data validation).<br>
-            Migrated Lead Offering Management app to AngularJS, enhancing performance and UX.
+            Played a pivotal role in building the Support front-end—a comprehensive maintenance, debugging, and log analysis solution for the UBS Product Inventory Management (PIM) system. Developed features such as a Log Viewer, Data Transformation tools, and analytics GUI for quality issue resolution.<br>
+            Led the migration of the Lead Offering Management application to AngularJS, streamlining portfolio management for Offered Products and industrializing investment process management.<br>
+            <ul class="exp-details-list">
+              <li>Engineered robust support and analytics tools for enterprise product management.</li>
+              <li>Delivered modern front-end migration for better maintainability and performance.</li>
+              <li>Enabled efficient troubleshooting and data validation for business teams.</li>
+            </ul>
           </div>
         </li>
       </ul>
